@@ -246,7 +246,7 @@ body{
 
 .item.owned {
     border: 1px solid rgb(227, 236, 90);
-    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2), inset 0px 10px 15px rgb(210, 233, 83);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2), inset 0px -10px 15px #fffb0e;
 
     /* img:nth-child(2) {
         opacity: 0;
@@ -318,7 +318,7 @@ footer p{
     }
 
     .item.owned {
-        box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2), inset 0px 20px 30px rgb(210, 233, 83);
+        box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2), inset 0px -25px 20px #fffb0e
     }
 }
 
