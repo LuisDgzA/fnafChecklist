@@ -102,6 +102,13 @@ body{
     text-align: center;
 }
 
+#clock{
+    position: absolute;
+    right: 1.1rem;
+    top: 1.1rem;
+    color: #fff;
+}
+
 
 .title {
     
