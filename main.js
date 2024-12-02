@@ -291,6 +291,9 @@ collectablesTras.forEach((collectable,index) => {
     let isOwned = idsOwned.includes(collectable.id);
     ItemsWrapper2.insertAdjacentHTML('beforeend',
         `<div class="item ${isOwned ? 'owned' : '' }" data-id="${collectable.id}">
+            <img class="noise" src="./assets/img/bg.png"/>
+            <img class="bateria" src="./assets/img/Vector.webp"/>   
+            <img class="bateria_full" src="./assets/img/Group.webp" /> 
             <div class="imagen-fondo" style="--bgimg: url('./assets/img/${collectable.srcColor}.webp')"></div>
             
         </div>`)
@@ -302,6 +305,9 @@ collectablesLLa.forEach((collectable,index) => {
     let isOwned = idsOwned.includes(collectable.id);
     ItemsWrapper3.insertAdjacentHTML('beforeend',
         `<div class="item ${isOwned ? 'owned' : '' }" data-id="${collectable.id}">
+            <img class="noise" src="./assets/img/bg.png"/>
+            <img class="bateria" src="./assets/img/Vector.webp"/>   
+            <img class="bateria_full" src="./assets/img/Group.webp" /> 
             <div class="imagen-fondo" style="--bgimg: url('./assets/img/${collectable.srcColor}.webp')"></div>
             
         </div>`)
@@ -313,6 +319,9 @@ collectablesCaps.forEach((collectable,index) => {
     let isOwned = idsOwned.includes(collectable.id);
     ItemsWrapper4.insertAdjacentHTML('beforeend',
         `<div class="item ${isOwned ? 'owned' : '' }" data-id="${collectable.id}">
+            <img class="noise" src="./assets/img/bg.png"/>
+            <img class="bateria" src="./assets/img/Vector.webp"/>   
+            <img class="bateria_full" src="./assets/img/Group.webp" /> 
             <div class="imagen-fondo" style="--bgimg: url('./assets/img/${collectable.srcColor}.webp')"></div>
             
         </div>`)
@@ -322,6 +331,37 @@ collectablesCaps.forEach((collectable,index) => {
 const Items = document.querySelectorAll('.item');
 
 Items.forEach(item => {
+    item.addEventListener('click', () => {
+        item.classList.toggle('owned')
+        // let itemsLocalStorage 
+
+        let id = parseInt(item.getAttribute('data-id'))
+        if(idsOwned.includes(id)){
+            console.log('si lo incluye')
+            idsOwned = idsOwned.filter(theId => theId != id)
+        }else{
+            idsOwned.push(id)
+        }
+        console.log('id',id)
+        console.log(idsOwned)
+
+        localStorage.setItem("owned", JSON.stringify(idsOwned));
+    })
+})
+
+const Puzzle = document.getElementById('Puzzle');
+
+for(let i = 1; i < 6; i++){
+    for(let j = 1; j < 8; j++){
+        Puzzle.insertAdjacentHTML('beforeend', `<img src="./assets/img/row-${i}-column-${j}.png" alt="ij" data-id="10${i}${j}" />`)
+    }
+}
+
+const ItemsPuzzle = document.querySelectorAll('.puzzle img');
+
+console.log(ItemsPuzzle)
+
+ItemsPuzzle.forEach(item => {
     item.addEventListener('click', () => {
         item.classList.toggle('owned')
         // let itemsLocalStorage 
