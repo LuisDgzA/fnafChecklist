@@ -286,6 +286,8 @@ collectables.forEach((collectable,index) => {
         </div>`)
 })
 
+
+
 const ItemsWrapper2 = document.querySelector('.collection-2')
 
 collectablesTras.forEach((collectable,index) => {
@@ -350,6 +352,7 @@ Items.forEach(item => {
         console.log(idsOwned)
 
         localStorage.setItem("owned", JSON.stringify(idsOwned));
+        RefreshCollected()
     })
 })
 
@@ -385,8 +388,44 @@ ItemsPuzzle.forEach(item => {
         console.log(idsOwned)
 
         localStorage.setItem("owned", JSON.stringify(idsOwned));
+
+        RefreshCollected()
     })
 })
+
+function RefreshCollected(){
+    let Col1 = document.getElementById('col1')
+
+    let col1Owned = document.querySelectorAll('.collection-1 .item.owned')
+
+    Col1.innerHTML = `${col1Owned.length} / ${collectables.length}`
+
+    let Col2 = document.getElementById('col2')
+
+    let col2Owned = document.querySelectorAll('.collection-2 .item.owned')
+
+    Col2.innerHTML = `${col2Owned.length} / ${collectablesTras.length}`
+
+    let Col3 = document.getElementById('col3')
+
+    let col3Owned = document.querySelectorAll('.collection-3 .item.owned')
+
+    Col3.innerHTML = `${col3Owned.length} / ${collectablesLLa.length}`
+
+    let Col4 = document.getElementById('col4')
+
+    let col4Owned = document.querySelectorAll('.collection-4 .item.owned')
+
+    Col4.innerHTML = `${col4Owned.length} / ${collectablesCaps.length}`
+
+    let Col5 = document.getElementById('col5')
+
+    let col5Owned = document.querySelectorAll('.puzzle .item_puzzle.owned')
+
+    let puzzleItems = document.querySelectorAll('.item_puzzle')
+
+    Col5.innerHTML = `${col5Owned.length} / ${puzzleItems.length}`
+}
 
 
 function showTime(){
@@ -417,3 +456,4 @@ function showTime(){
 }
 
 showTime();
+RefreshCollected()
