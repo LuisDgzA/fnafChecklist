@@ -268,6 +268,17 @@ body{
     top: 1px;
 }
 
+.recording{
+    width: 0.4rem;
+    height: 0.4rem;
+    background-color: red;
+    position: absolute;
+    left: 1px;
+    top: 0.8rem;
+    border-radius: 50%;
+    display: none;
+}
+
 
 
 
@@ -296,6 +307,10 @@ body{
     }
     .bateria_full{
         display: block;
+    }
+    .recording{
+        display: block;
+        
     }
 }
 
@@ -384,6 +399,11 @@ footer p{
     .bateria, .bateria_full{
         position: absolute;
         width: 1.5rem;
+    }
+    .recording{
+        top: 1.5rem;
+        width: 0.7rem;
+        height: 0.7rem;
     }
     
 }
