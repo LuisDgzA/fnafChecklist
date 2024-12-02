@@ -16,7 +16,7 @@ body{
     
 }
 .wrapper {
-    background: url('./assets/img/fondoa.png');
+    background: url('./assets/img/fondoa.webp');
     background-size: cover;
     background-attachment: fixed;
     width: 100%;
@@ -140,7 +140,7 @@ body{
   }
 }
 
-.title-wrapper:first-of-type .title{
+.title:first-of-type {
     margin-top: 3rem;
 }
 
@@ -178,7 +178,7 @@ body{
     opacity: 0.8;
 } */
 
-@keyframes glitch {
+/* @keyframes glitch {
     0% {
         text-shadow: 0.05em 0 0 rgba(255, 0, 0, 0.75),
             -0.05em -0.025em 0 rgba(0, 255, 0, 0.75),
@@ -218,7 +218,7 @@ body{
             -0.025em -0.025em 0 rgba(0, 255, 0, 0.75),
             -0.025em -0.05em 0 rgba(0, 0, 255, 0.75);
     }
-}
+} */
 
 .item-collecion-wrapper {
     display: flex;
@@ -262,7 +262,7 @@ body{
 }
 .bateria, .bateria_full{
     position: absolute;
-    width: 1.2rem;
+    width: 0.8rem;
     height: auto;
     left: 1px;
     top: 1px;
@@ -270,29 +270,7 @@ body{
 
 
 
-@keyframes blob1 {
 
-    0%,
-    100% {
-        border-radius: 48% 52% 76% 24% / 42% 58% 42% 58%
-    }
-
-    50% {
-        border-radius: 70% 38% 65% 45% / 91% 60% 50% 29%;
-    }
-}
-
-@keyframes blob2 {
-
-    0%,
-    100% {
-        border-radius: 42% 58% 35% 65% / 61% 30% 70% 39%;
-    }
-
-    50% {
-        border-radius: 30% 48% 75% 45% / 70% 40% 40% 29%;
-    }
-}
 
 .item.owned {
     /* border: 1px solid rgb(227, 236, 90); */
@@ -336,6 +314,7 @@ body{
     width: 100%;
     display: flex;
     justify-content: space-around;
+    color: #fff;
 }
 
 footer p{
@@ -377,7 +356,10 @@ footer p{
     .item-collecion-wrapper {
         gap: 3rem;
     }
-
+    .bateria, .bateria_full{
+        position: absolute;
+        width: 1.5rem;
+    }
     
 }
 

@@ -279,8 +279,8 @@ collectables.forEach((collectable,index) => {
     ItemsWrapper.insertAdjacentHTML('beforeend',
         `<div class="item ${isOwned ? 'owned' : '' }" data-id="${collectable.id}">
             <img class="noise" src="./assets/img/bg.png"/>
-            <img class="bateria" src="./assets/img/Vector.png"/>   
-            <img class="bateria_full" src="./assets/img/Group.png" />         
+            <img class="bateria" src="./assets/img/Vector.webp"/>   
+            <img class="bateria_full" src="./assets/img/Group.webp" />         
             <div class="imagen-fondo" style="--bgimg: url('./assets/img/${collectable.srcColor}.webp')"></div>
         </div>`)
 })
