@@ -366,7 +366,7 @@ console.log(ItemsPuzzle)
 
 ItemsPuzzle.forEach(item => {
     item.addEventListener('click', () => {
-        item.classList.toggle('ownedp')
+        item.classList.toggle('owned')
         console.log('puzzle')
         let itemsLocalStorage 
 
