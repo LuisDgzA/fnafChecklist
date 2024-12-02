@@ -353,18 +353,22 @@ const Puzzle = document.getElementById('Puzzle');
 
 for(let i = 1; i < 6; i++){
     for(let j = 1; j < 8; j++){
-        Puzzle.insertAdjacentHTML('beforeend', `<img src="./assets/img/row-${i}-column-${j}.png" alt="ij" data-id="10${i}${j}" />`)
+        let isOwnedP = idsOwned.includes(Number(`10${i}${j}`));
+        console.log('isownedpus',isOwnedP)
+        Puzzle.insertAdjacentHTML('beforeend', `
+            <div class="item_puzzle ${isOwnedP ? 'owned' : '' }" data-id="10${i}${j}"><img  src="./assets/img/row-${i}-column-${j}.png" alt="ij"  /></div>`)
     }
 }
 
-const ItemsPuzzle = document.querySelectorAll('.puzzle img');
+const ItemsPuzzle = document.querySelectorAll('.item_puzzle');
 
 console.log(ItemsPuzzle)
 
 ItemsPuzzle.forEach(item => {
     item.addEventListener('click', () => {
-        item.classList.toggle('owned')
-        // let itemsLocalStorage 
+        item.classList.toggle('ownedp')
+        console.log('puzzle')
+        let itemsLocalStorage 
 
         let id = parseInt(item.getAttribute('data-id'))
         if(idsOwned.includes(id)){
