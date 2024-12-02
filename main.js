@@ -399,6 +399,8 @@ function RefreshCollected(){
     let col1Owned = document.querySelectorAll('.collection-1 .item.owned')
 
     Col1.innerHTML = `${col1Owned.length} / ${collectables.length}`
+    
+    
 
     let Col2 = document.getElementById('col2')
 
@@ -425,6 +427,10 @@ function RefreshCollected(){
     let puzzleItems = document.querySelectorAll('.item_puzzle')
 
     Col5.innerHTML = `${col5Owned.length} / ${puzzleItems.length}`
+
+    if((col1Owned.length == collectables.length) || (col2Owned.length == collectablesTras.length) || (col3Owned.length == collectablesLLa.length) || (col4Owned.length == collectablesCaps.length) || (col5Owned.length == puzzleItems.length)){
+        fireWorks()
+    }
 }
 
 
@@ -455,5 +461,29 @@ function showTime(){
     
 }
 
+function fireWorks(){
+    var duration = 7 * 1000;
+    var animationEnd = Date.now() + duration;
+    var defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
+
+    function randomInRange(min, max) {
+    return Math.random() * (max - min) + min;
+    }
+
+    var interval = setInterval(function() {
+    var timeLeft = animationEnd - Date.now();
+
+    if (timeLeft <= 0) {
+        return clearInterval(interval);
+    }
+
+    var particleCount = 50 * (timeLeft / duration);
+    // since particles fall down, start a bit higher than random
+    confetti({ ...defaults, particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } });
+    confetti({ ...defaults, particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } });
+    }, 250);
+}
+
 showTime();
 RefreshCollected()
+
