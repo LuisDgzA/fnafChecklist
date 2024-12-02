@@ -294,7 +294,8 @@ collectablesTras.forEach((collectable,index) => {
         `<div class="item ${isOwned ? 'owned' : '' }" data-id="${collectable.id}">
             <img class="noise" src="./assets/img/bg.png"/>
             <img class="bateria" src="./assets/img/Vector.webp"/>   
-            <img class="bateria_full" src="./assets/img/Group.webp" /> 
+            <img class="bateria_full" src="./assets/img/Group.webp" />
+            <div class="recording"></div>
             <div class="imagen-fondo" style="--bgimg: url('./assets/img/${collectable.srcColor}.webp')"></div>
             
         </div>`)
@@ -308,7 +309,8 @@ collectablesLLa.forEach((collectable,index) => {
         `<div class="item ${isOwned ? 'owned' : '' }" data-id="${collectable.id}">
             <img class="noise" src="./assets/img/bg.png"/>
             <img class="bateria" src="./assets/img/Vector.webp"/>   
-            <img class="bateria_full" src="./assets/img/Group.webp" /> 
+            <img class="bateria_full" src="./assets/img/Group.webp" />
+            <div class="recording"></div>
             <div class="imagen-fondo" style="--bgimg: url('./assets/img/${collectable.srcColor}.webp')"></div>
             
         </div>`)
@@ -322,7 +324,8 @@ collectablesCaps.forEach((collectable,index) => {
         `<div class="item ${isOwned ? 'owned' : '' }" data-id="${collectable.id}">
             <img class="noise" src="./assets/img/bg.png"/>
             <img class="bateria" src="./assets/img/Vector.webp"/>   
-            <img class="bateria_full" src="./assets/img/Group.webp" /> 
+            <img class="bateria_full" src="./assets/img/Group.webp" />
+            <div class="recording"></div>
             <div class="imagen-fondo" style="--bgimg: url('./assets/img/${collectable.srcColor}.webp')"></div>
             
         </div>`)
