@@ -72,13 +72,14 @@ body{
     font-weight: normal;
     font-size: clamp(1rem, 2.5vw, 3rem);
     font-family: sans-serif;
-    /* font-weight: 900; */
+    font-weight: 700;
     margin-bottom: 1rem;
     color: #fff;
-    -webkit-text-stroke: 1px aqua;
+    -webkit-text-stroke: 1px #FF9FBE;
    -webkit-text-fill-color: transparent;
    animation: glow-title 2s ease-in-out infinite alternate;
    letter-spacing: 0.15rem;
+
    /* text-shadow: 1px 1px 2px aqua; */
    
 }
@@ -94,11 +95,11 @@ body{
 {
   from 
   {
-    text-shadow: 0 0 10px aqua, 0 0 15px aqua;
+    text-shadow: 0 0 20px #FF9FBE;
   }
   to
   {
-    text-shadow: 0 0 20px aqua;
+    text-shadow: 0 0 10px #FF9FBE, 0 0 15px #FF9FBE;
   }
 }
 
@@ -130,8 +131,8 @@ body{
 }
 
 .item {
-    width: 3.9rem;
-    height: 3.9rem;
+    width: 4.9rem;
+    height: 4.9rem;
     display: grid;
     place-items: center;    
     cursor: pointer;
@@ -188,7 +189,7 @@ body{
         filter: drop-shadow(0 0 2px #000);
     } */
     .imagen-fondo {
-        filter: drop-shadow(0 0 0.75rem #e4e132);
+        filter: drop-shadow(0 0 3rem #ffffff2b) drop-shadow(0 0 .8rem #b300386b) drop-shadow(0 0 .1rem #f7004da6);
     }
 
     .noise{
@@ -239,7 +240,7 @@ body{
 
 .item_puzzle.owned{
     filter: grayscale(0);
-    border: 2.5px solid yellow;
+    border: 2.5px solid #00ff4e;
 }
 
 
@@ -321,4 +322,9 @@ footer p{
     .container {
         max-width: 1320px;
     }
+}
+
+#imagen{
+    position: relative;
+    z-index: 100;
 }
