@@ -501,26 +501,51 @@ function fireWorks(){
     }, 250);
 }
 
-let Imagen = document.getElementById("imagen")
+let DownloadButtons = document.querySelectorAll(".download");
 
-Imagen.addEventListener("click", async () => {
+DownloadButtons.forEach(btn => {
+    btn.addEventListener("click", async () => {
+
+        toggleLoader()
+        // console.log()
+        let close = btn.closest(".divider")
+        let collectionNumber = close.getAttribute("data-col")
+        let isPuzzle = collectionNumber == "5";
+        let DivsOwned = close.querySelectorAll(`${isPuzzle ? ".item_puzzle" : ".item"}.owned`)
+        let arrayIds = []
+        DivsOwned.forEach(div => arrayIds.push(parseInt(div.getAttribute("data-id"))))
+        let stringIds = arrayIds.join()
+        console.log(arrayIds)
     
-    const response = await fetch(`https://screenshot.brosvalley.com/screenshot?ids=1,2,3&col=1`);
-    console.log(response)
-    if (response.ok) {
-        const data = await response.text(); // Recibimos el HTML con la imagen en base64
-        
-        // Crear un enlace de descarga para la imagen
-        const link = document.createElement('a');
-        const base64Image = data.match(/data:image\/png;base64,([a-zA-Z0-9+/=]+)/)[0];
-        
-        link.href = base64Image;
-        link.download = 'screenshot.png'; // Nombre del archivo a descargar
-        link.click();
-    } else {
-        console.error('Error al obtener la captura de pantalla');
-    }
+        const response = await fetch(`https://screenshot.brosvalley.com/screenshot?ids=${stringIds}&col=${collectionNumber}`);
+        console.log(response)
+        if (response.ok) {
+            const data = await response.text(); // Recibimos el HTML con la imagen en base64
+            
+            // Crear un enlace de descarga para la imagen
+            const link = document.createElement('a');
+            const base64Image = data.match(/data:image\/png;base64,([a-zA-Z0-9+/=]+)/)[0];
+            
+            link.href = base64Image;
+            link.download = 'screenshot.png'; // Nombre del archivo a descargar
+            link.click();
+            toggleLoader()
+        } else {
+            toggleLoader()
+            console.error('Error al obtener la captura de pantalla');
+        }
 })
+})
+
+function toggleLoader(){
+	const loader = document.querySelector(".loader__container"),
+	body = document.body;
+	console.log("loader")
+
+	loader.classList.toggle("loader--active")
+	body.classList.toggle("loader--is--active")
+
+}
 
 showTime();
 RefreshCollected()
